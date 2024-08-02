@@ -49,6 +49,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod1Mask
+#define SUPER Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -65,6 +66,8 @@ static const char *roficmd[] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = { "brave", NULL };
 static const char *zathuracmd[] = { "zathura", NULL };
+static const char *testcmd[] = { "notify-send", "\"Hello World!\"", NULL };
+static const char *lockscreencmd[] = { "i3lock", "-B", "sigma", "-k", "--time-color", "009999", "--date-color", "009999", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -73,6 +76,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_i,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = zathuracmd } },
+	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = testcmd } },
+	{ SUPER,                        XK_l,      spawn,          {.v = lockscreencmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
