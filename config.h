@@ -69,6 +69,13 @@ static const char *zathuracmd[] = { "zathura", NULL };
 static const char *testcmd[] = { "notify-send", "\"Hello World!\"", NULL };
 static const char *lockscreencmd[] = { "i3lock", "-B", "sigma", "-k", "--time-color", "009999", "--date-color", "009999", NULL };
 
+/* FN-row */
+#include <X11/XF86keysym.h>
+/* Volume control */
+static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
+static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
+static const char *volmutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -78,6 +85,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_z,      spawn,          {.v = zathuracmd } },
 	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = testcmd } },
 	{ SUPER,                        XK_l,      spawn,          {.v = lockscreencmd } },
+	{ 0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
+	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
+	{ 0, XF86XK_AudioMute, spawn, {.v = volmutecmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
