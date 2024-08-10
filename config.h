@@ -75,6 +75,8 @@ static const char *lockscreencmd[] = { "i3lock", "-B", "sigma", "-k", "--time-co
 static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *volmutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *brightnessupcmd[] = { "brightnessctl", "set", "+10%", NULL };
+static const char *brightnessdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -88,6 +90,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
 	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
 	{ 0, XF86XK_AudioMute, spawn, {.v = volmutecmd } },
+	{ 0, XF86XK_MonBrightnessUp, spawn, {.v = brightnessupcmd } },
+	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = brightnessdowncmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
