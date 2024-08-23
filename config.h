@@ -66,7 +66,6 @@ static const char *roficmd[] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = { "brave", NULL };
 static const char *zathuracmd[] = { "zathura", NULL };
-static const char *testcmd[] = { "notify-send", "\"Hello World!\"", NULL };
 static const char *lockscreencmd[] = { "i3lock", "-B", "sigma", "-k", "--time-color", "009999", "--date-color", "009999", NULL };
 
 /* FN-row */
@@ -75,6 +74,7 @@ static const char *lockscreencmd[] = { "i3lock", "-B", "sigma", "-k", "--time-co
 static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *volmutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
+/* Brightness control */
 static const char *brightnessupcmd[] = { "brightnessctl", "set", "+10%", NULL };
 static const char *brightnessdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
 
@@ -85,7 +85,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_i,      spawn,          {.v = browsercmd } },
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_z,      spawn,          {.v = zathuracmd } },
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = testcmd } },
 	{ SUPER,                        XK_l,      spawn,          {.v = lockscreencmd } },
 	{ 0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
 	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
