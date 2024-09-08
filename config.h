@@ -7,14 +7,14 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
 	"JetBrains Mono Nerd Font:size=10:anitalias=true:autohint=true",
-	"monospace:size=10",
+	"monospace:size=11",
 };
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#222222";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -35,7 +35,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -66,7 +66,7 @@ static const char *roficmd[] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *browsercmd[] = { "brave", NULL };
 static const char *zathuracmd[] = { "zathura", NULL };
-static const char *lockscreencmd[] = { "i3lock", "-B", "sigma", "-k", "--time-color", "009999", "--date-color", "009999", NULL };
+static const char *lockscreencmd[] = { "slock", NULL };
 
 /* FN-row */
 #include <X11/XF86keysym.h>
